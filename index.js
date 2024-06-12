@@ -504,3 +504,82 @@
 // console.log(!true - true); //-1  !true = !1 = 0-1 = -1
 // console.log(typeof true);   //boolean
 // console.log(true + + "10"); // 11   true = 1 false = 0
+
+//String question
+
+//let str = "Hello,how are you";
+
+
+
+//1 convert str in only 1 array
+
+// console.log(str.split());
+
+
+//2 convert string to array with reach character
+
+// console.log([...str]);
+// console.log(str.split("")) //single character
+
+
+//3 convert string to array with space or any sequence
+
+// console.log(str.split(" "));
+
+
+//4 replace any character
+
+// arr = str.split("");
+// arr[0] = "j";
+// console.log(arr.join(""));
+
+//other way
+// console.log(str.replace(/H/,"j"))
+
+
+//5 get substring from string
+
+// sub = str.substring(1);
+// console.log(sub);
+
+
+//6 remove last character
+
+// console.log(str.substring(0, str.length - 1));
+
+
+//7 remove first element
+
+// arr = str.split(" ");
+// arr.shift();
+// console.log(arr.join(" "));
+
+
+//8 remove string before specific character
+
+// let temp = str.split('o');
+// console.log(temp[0]);  //hell
+
+
+//9 reverse
+
+// let arr = str.split("").reverse();
+// console.log(arr.join(""));
+
+
+//10 remove extra space
+
+// console.log(str.trim());
+
+
+//11 concat two string
+
+// let str1 = "kru";
+// let str2 = "shang"
+// console.log(str1.concat(str2)); //krushang
+
+//12 left right remove space
+
+// let str = "   hello   "
+// console.log(str.trimStart());  //left side
+// console.log(str.trimEnd());    //right side

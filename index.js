@@ -178,7 +178,6 @@
 // console.log(a === b === --c); //1 === 1(true) true === 1(false)  ans=false
 // console.log(a === --c);       //true
 
-
 //34
 // console.log(3 * 3);                 //9
 // console.log(3 ** 3);                //27
@@ -199,7 +198,6 @@
 // //find os name
 // // navigator.platform()
 
-
 //39
 // let for = 100; //error - for is reserved keyword
 
@@ -212,7 +210,6 @@
 //     let price = "200";
 // }
 // fruit();
-
 
 //41
 // for (var i = 0; i < 3; i++){
@@ -227,7 +224,6 @@
 //         console.log(i)            // 0 1 2
 //     }, 1);                        //local (block) scope - var
 // }
-
 
 //43
 // console.log(+true);   //1   value of true=0 0+1=1
@@ -260,7 +256,6 @@
 // console.log(x);   //undefined
 // var x = 10;
 // console.log(x);  //10
-
 
 //48
 // var x;
@@ -322,7 +317,6 @@
 // console.log(obj.hasOwnProperty("1"));  //true
 // console.log(obj.hasOwnProperty(1));  //true
 
-
 //58
 // const obj = { a: "1", b: "2", a: "3" };
 // console.log(obj);    //ans = {a:"3",b:"2"}
@@ -347,4 +341,166 @@
 // bar();
 // baz();
 
+//61
+// const person = { name: "krushang" };
+// function sayHi(age) {
+//   return `${this.name} is ${age}`;
+// }
+// console.log(sayHi.call(person, 21)); //krushang is 21
+// console.log(sayHi.bind(person, 21)); //return function
+// console.log(sayHi.bind(person, 21)()); //krushang is 21
 
+//62
+// function sayHi() {
+//     return (() => 0)();
+// }
+// console.log(typeof sayHi());  //number
+
+//63
+// function sayHi() {
+//     return () => 0;
+// }
+// console.log(typeof sayHi());  //function
+
+//64
+// console.log(typeof typeof 1)  //string
+
+//65
+// const number = [1, 2, 3];
+// number[6] = 11;
+// console.log(number);    //[ 1, 2, 3, <3 empty items>, 11 ]
+
+//66
+// const num = [1, 2, 3];
+// num[9] = num;
+// console.log(num);   //infinite nested array
+
+//67
+//console.log(!null); //!null = true
+// console.log(!"");
+// console.log(!!""); // !"" = true !true = false
+// console.log(!1);
+// console.log(!!1); // !1 = false !false = true
+
+//68
+// console.log(setInterval(() => console.log("hi"), 1000));
+// console.log(setInterval(() => console.log("hi"), 1000));
+// console.log(setInterval(() => console.log("hi"), 1000));
+
+//69
+//console.log([..."krushang"]);
+
+// [
+//     'k', 'r', 'u',
+//     's', 'h', 'a',
+//     'n', 'g'
+//   ]
+
+//70
+// const firstPromise = new Promise((res, rej) => {
+//   setTimeout(res, 500, "1");
+// });
+// const secondPromise = new Promise((res, rej) => {
+//   setTimeout(res, 100, "2");
+// });
+
+// Promise.race([firstPromise.secondPromise]).then((res) => console.log(res));   //2 first resolve 2
+
+//71
+// let person = { name: "krushang" };
+// const members = [person];
+// person = null;
+// console.log(members);  // [ { name: 'krushang' } ]-reason object to newarr memory location new than not change
+
+//72
+// const person = {
+//     name: "krushang",
+//     age: 21,
+// };
+// for (const item in person) {
+//     console.log(item);   //name age = keys value log
+// }
+
+//73
+// let data = 3 + 4 + '5';
+// console.log(typeof data);  //String
+// console.log(data);    //75
+
+//74
+// console.log(typeof 3 + 4 + '5'); //number45  typeof 3 number + 4+"5" =number45
+
+//75
+// console.log(typeof (3 + 4 + +'5'));  //number
+// console.log((3 + 4 + +'5'));  //12
+
+//76
+// console.log([] == []); //false
+
+//77
+// let data = [1, 2, 3].map((num) => {
+//   if (typeof num === "number") return 1;
+//   return num * 2;
+// });
+// console.log(data);  //[1,1,1]
+
+//78
+// function getInfo(member) {
+//   member.name = "krushang";
+// }
+// const person = { name: "k" };
+// getInfo(person);
+// console.log(person); //{ name: 'krushang' } reason: person is object object passed as a perameter call by refrence than change value of person k to krushang and log krushang
+
+//79
+// function Car() {
+//     this.make = "tata";
+//     return {make: "kia"}
+// }
+// const myCar = new Car();
+// console.log(myCar.make); //kia  reason: if return nahi then tata
+
+//80
+// (() => {
+//     let x = (y = 10);
+// })
+//     ();
+// console.log(typeof x);  //let block lvl scope then x is not defined in out of block then log undefined
+// console.log(typeof y);  //number
+
+//81
+// (() => {
+//     let x = y = 10;
+// })();
+// console.log(typeof y);  //number cuz y is variable (var y)
+
+//82
+// (() => {
+//     let x = 10;
+
+// })();
+// (() => {
+//     let x = 10;
+// })();
+// console.log(typeof x);  //undefined cuz let key word
+
+//83
+// (() => {
+//     let x = y = 10;
+// })();
+// (() => {
+//     let x = y = 20;
+// })();
+// console.log(y);   //20
+
+//84
+// let x = 100;
+// (() => {
+//     var x = 20;
+// })();
+// console.log(x);  //100
+
+//85
+// console.log(true - true); //0
+// console.log(!true - true); //-1  !true = !1 = 0-1 = -1
+// console.log(typeof true);   //boolean
+// console.log(true + + "10"); // 11   true = 1 false = 0

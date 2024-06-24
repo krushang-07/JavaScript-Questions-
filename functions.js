@@ -89,7 +89,26 @@
 // };
 // fun(5, 6, 7, 8);
 
-
 //callback function
+// document.addEventListener("click",function(params){})
 
+//TOPIC:- Arrow function
 
+const add = (num1, num2) => {
+  return num1 * num2;
+};
+console.log(add(2, 3));
+
+//this keyword in regular and normal function
+
+let user = {
+  username: "krushang savaliya",
+  rc1: () => {
+    console.log(this.username); //undefined
+  },
+  rc2() {
+    console.log(this.username); //krushang savaliya
+  },
+};
+user.rc1();
+user.rc2();
